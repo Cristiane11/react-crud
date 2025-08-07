@@ -22,7 +22,7 @@ function Home(){
                     <br/>
                     <div className='w-75 rounded bg-white boder shadow p-4'>
                         <div className='d-flex justify-content-end' >
-                            <Link to="/create" classNmae="btn btn-success"> Add + </Link>
+                            <Link to="/create" className="btn btn-success" > Add + </Link>
                             </div>
                         <table className="table table-stripend">
                             <thead>

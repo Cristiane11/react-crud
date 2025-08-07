@@ -2,6 +2,7 @@ import axios from "axios";
 import {useEffect,useState} from 'react';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from "react-router";
 //import Container from "react-bootstrap/Container";
 //import Button from 'react-bootstrap/Button';
 
@@ -16,11 +17,14 @@ function Home(){
     },[])
     return(
         
-                <div className='d-flex flex-column justify-content-center align-items-centerbg-light vh-100 '>
+                <div className='d-flex flex-column justify-content-center align-items-center bg-light vh-100 '>
                     <h1>List of Users</h1>
                     <br/>
                     <div className='w-75 rounded bg-white boder shadow p-4'>
-                        <table>
+                        <div className='d-flex justify-content-end' >
+                            <Link to="/create" classNmae="btn btn-success"> Add + </Link>
+                            </div>
+                        <table className="table table-stripend">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -36,10 +40,11 @@ function Home(){
                                     <td>{d.id}</td>
                                     <td >{d.name}</td>
                                     <td>{d.email}</td>
-                                    <td>{d.phone}</td>
+                                    <td className="me-4">{d.phone}</td>
                                     <td>{d.action}</td>
-                                <button className="btn btn-sm-primary">Edit</button>
-                                <button className="btn btn-sm-danger">Delete</button>
+                                <button className="btn btn-sm btn-info  bg-info me-2">Read</button>    
+                                <button className="btn btn-sm btn-primary bg-primary me-2">Edit</button>
+                                <button className="btn btn-sm btn-danger bg-danger">Delete</button>
                                 </tr>
                                ))
 

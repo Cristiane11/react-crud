@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 function Update(){
-        const[data, setData] = useState([])
+        //const[data, setData] = useState([])
         const{id} = useParams();
         const [values, setValues] = useState({
                 name:'',
@@ -17,7 +17,9 @@ function Update(){
 
          useEffect(()=>{
             axios.get('http://localhost:3000/users/' + id)
-            .then(res=>setData(res.data))
+            .then(res=>{
+                setValues(res.data);
+            })
             .catch(err =>console.log(err));
 
              },[])
@@ -40,18 +42,18 @@ function Update(){
                            <div className="mb-2">
                                <label htmlfor="name">Name:</label>
                                <input type="text" name='name' className='form-control' placeholder='Enter Name'
-                               value ={data.name} onChange={e => setValues({...values, name: e.target.value})}  />
+                               value ={values.name} onChange={e => setValues({...values, name: e.target.value})}  />
                                
                            </div>
                            <div className="mb-2">
                                <label htmlfor="email">Email:</label>
                                <input type="email" name='email' className='form-control' placeholder='Enter Email'
-                               value ={data.email} onChange={e => setValues({...values, email: e.target.value})}  />
+                               value ={values.email} onChange={e => setValues({...values, email: e.target.value})}  />
                            </div>
                            <div className="mb-3">
                                <label htmlfor="name">Phone:</label>
                                <input type="text" name='phone' className='form-control' placeholder='Enter Phone'
-                                 value ={data.phone} onChange={e => setValues({...values, phone: e.target.value})}  />
+                                 value ={values.phone} onChange={e => setValues({...values, phone: e.target.value})}  />
                            </div>
                            <button className='btn btn-success'>Update</button>
                            <Link to="/" className="btn btn-primary ms-3">Back</Link>

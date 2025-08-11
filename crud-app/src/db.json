@@ -1,14 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "Leanne Graham",
-      "username": "bret",
-      "email": "sincere@april.briz",
-      "phone": "770-736-8031",
-      "website": "Hildegard.org"
-    },
-    {
       "id": "2",
       "name": "Maria Rabelo",
       "username": "Mary",

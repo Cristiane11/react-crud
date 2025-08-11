@@ -42,7 +42,7 @@ function Home(){
                                     <td>{d.email}</td>
                                     <td className="me-4">{d.phone}</td>
                                     <td>{d.action}</td>
-                                <button className="btn btn-sm btn-info  bg-info me-2">Read</button>    
+                                <Link to={`/read/${d.id}`} className="btn btn-sm btn-info  bg-info me-2">Read</Link>    
                                 <button className="btn btn-sm btn-primary bg-primary me-2">Edit</button>
                                 <button className="btn btn-sm btn-danger bg-danger">Delete</button>
                                 </tr>
